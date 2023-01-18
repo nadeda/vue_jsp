@@ -1,194 +1,194 @@
 <h1>WJSP</h1>
 
-## WEBPACK + JSP 构建多页应用
+## 다중 페이지 애플리케이션을 구축하기 위한 WEBPACK + JSP
 
-### 概述
-传统的JSP页面应用无法有效的使用ES6语法特性，项目打包压缩困难，无法热更新。传统的单页应用在Tomcat等容器下无法进行服务端渲染到达SEO的效果。本项目工程很好融合的传统JSP页面服务端渲染的特点和单页应用开发特性且极易上手使用!
+### 개요
+전통적인 JSP 페이지 애플리케이션은 ES6 구문 기능을 효과적으로 사용할 수 없으며 프로젝트 패키징 및 압축이 어렵고 핫 업데이트를 수행할 수 없습니다. 전통적인 단일 페이지 애플리케이션은 Tomcat과 같은 컨테이너에서 SEO 효과를 달성하기 위해 서버 측 렌더링을 수행할 수 없습니다. 이 프로젝트는 전통적인 JSP 페이지 서버측 렌더링과 단일 페이지 애플리케이션 개발 기능의 특성을 통합하고 사용하기 매우 쉽습니다!
 
-### 源码地址
-[源码地址](https://github.com/nqdy666/wjsp)
+### 소스 주소
+[출처주소](https://github.com/nqdy666/wjsp)
 
-### Demos与文档
-[Demos与文档](http://wjsp.qjzd.net/)
+### 데모 및 문서
+[데모 및 문서](http://wjsp.qjzd.net/)
 
-### 特性
-* 多页应用
-* JSP嵌套
-* el表达式
-* 服务端渲染(SEO)
-* 热部署
-* js,css语法转换
-* eslint
-* 热更新
-* 支持Vue
-* 打包压缩
-* IE9+
-支持传统JSP开发所的所有功能；可以通过自定义webpack配置来实现对react的支持；通过引入vue-router和vuex某一个页面完成可以变成一个单页应用。
+### 특징
+* 다중 페이지 응용 프로그램
+* JSP 중첩
+* 엘 표현
+* 서버측 렌더링(SEO)
+* 핫 배포
+* js, css 구문 변환
+* 에스린트
+* 핫 업데이트
+* Vue 지원
+* 패키지 압축
+*IE9+
+전통적인 JSP 개발의 모든 기능을 지원하고 사용자 지정 웹팩 구성을 통해 반응 지원을 실현할 수 있으며 특정 페이지를 완성하기 위해 vue-router 및 vuex를 도입하여 단일 페이지 애플리케이션으로 전환할 수 있습니다.
 
-如果您想要支持IE8，那需要把webpack降级，因为webpack2+是不支持IE8的，以及尽量避免去使用不支持IE8的库，比如jquery2+，lodash4+, Vue等，祝您好运。
+IE8을 지원하려면 webpack2+가 IE8을 지원하지 않기 때문에 webpack을 다운그레이드해야 하며 jquery2+, lodash4+, Vue 등과 같이 IE8을 지원하지 않는 라이브러리의 사용을 피해야 합니다. 행운을 빕니다.
 
-### 环境搭建
-工欲善其事，必先利其器。
+### 환경 공사
+일꾼이 일을 잘하고 싶다면 먼저 도구를 갈고 닦아야 합니다.
 
 * JDK1.7+
-* IntelliJ IDEA，需要安装js相关插件和配置支持es6语法。
-* Maven3+
-* Tomcat7+，端口默认请使用8080
-* Git bash
-* npm3+
-* node7+
+* IntelliJ IDEA는 js 관련 플러그인을 설치하고 es6 구문을 지원하도록 구성해야 합니다.
+* 메이븐3+
+* Tomcat7+, 기본적으로 포트 8080을 사용하십시오.
+* 힘내 배쉬
+*npm3+
+* 노드7+
 
-如果您喜欢编辑js和css的时候用vscode也是没有问题，不过编写jsp和java还是推荐用idea。
+js와 css 편집을 좋아한다면 vscode를 사용하는 것은 문제가 없지만 jsp와 java를 작성할 때 idea를 사용하는 것이 좋습니다.
 
-以下总结环境配置的相关文章，可供参考
-[JDK下载地址](https://qjzd.net/topic/5a4e1ef4f918faeb40031460)
-[IntelliJ IDEA配置前端开发环境](https://qjzd.net/topic/5a4ee74ff918faeb40031461)
-[IntelliJ IDEA配置JAVA WEB的Tomcat环境](https://qjzd.net/topic/5a4eef92f918faeb40031462)
-[maven下载安装](https://qjzd.net/topic/5a4ef4f0f918faeb40031463)
-[Git Bash下载安装](https://qjzd.net/topic/5a4ef698f918faeb40031464)
+다음은 참고할 수 있도록 환경 구성에 대한 관련 기사를 요약한 것입니다.
+[JDK 다운로드 주소](https://qjzd.net/topic/5a4e1ef4f918faeb40031460)
+[IntelliJ IDEA 구성 프런트엔드 개발 환경](https://qjzd.net/topic/5a4ee74ff918faeb40031461)
+[IntelliJ IDEA는 JAVA WEB의 Tomcat 환경을 구성합니다](https://qjzd.net/topic/5a4eef92f918faeb40031462)
+[maven 다운로드 및 설치](https://qjzd.net/topic/5a4ef4f0f918faeb40031463)
+[Git Bash 다운로드 및 설치](https://qjzd.net/topic/5a4ef698f918faeb40031464)
 
-### 目录说明
+### 디렉토리 설명
 ```
-├── pom.xml   // maven配置文件
-├── src
-|  ├── main
-|  |  ├── filters
-|  |  |  └── resources // java工程资源配置目录
-|  |  ├── java // java代码目录
-|  |  ├── js // 前端页面工程
-|  |  |  ├── build  // 编译相关以及webpack相关配置
-|  |  |  |  ├── build.js
-|  |  |  |  ├── check-versions.js
-|  |  |  |  ├── logo.png
-|  |  |  |  ├── utils.js
-|  |  |  |  ├── webpack.base.conf.js
-|  |  |  |  ├── webpack.dev.conf.js
-|  |  |  |  └── webpack.prod.conf.js
-|  |  |  ├── config // 配置相关
-|  |  |  |  ├── dev.env.js
-|  |  |  |  ├── index.js
-|  |  |  |  ├── js-jsp-map.js // 配置入口js和jsp的映射
-|  |  |  |  └── prod.env.js
-|  |  |  ├── package.json // npm配置
-|  |  |  ├── src // web项目工程目录
-|  |  |  |  ├── pages // jsp页面，最终的jsp文件们会按照pages相对路径打包进webapp/WEB-INF/jsp目录下
-|  |  |  |  |  ├── include // 共享的jsp页面，通过jsp:include引入
-|  |  |  |  |  |  ├── common_script.jsp
-|  |  |  |  |  |  ├── footer.jsp
-|  |  |  |  |  |  ├── header.jsp
-|  |  |  |  |  |  ├── init.jsp
-|  |  |  |  |  |  └── meta.jsp
-|  |  |  |  |  ├── index // 页面1
-|  |  |  |  |  |  ├── index.js // 需要在在config/js-jsp-map.js配置与jsp的映射关系，这样编译后的js会加载jsp的body下。一般js与jsp在同一个目录下。
-|  |  |  |  |  |  └── index.jsp
-|  |  |  |  |  └── start // 页面2
-|  |  |  |  |     ├── dashboard.css
-|  |  |  |  |     ├── index.js
-|  |  |  |  |     └── index.jsp
-|  |  |     |     └── my-component.vue 支持VUE
-|  |  |     ├── polyfills 兼容相关的代码
-|  |  |     |  ├── console.js
-|  |  |     |  ├── index.js
-|  |  |     |  └── promise.js
-|  |  |     ├── static // 存在静态文件，最终这些文件会拷贝到webapp目录下
-|  |  |     |  ├── favicon.ico
-|  |  |     |  ├── images
-|  |  |     |  |  ├── jsp.svg
-|  |  |     |  |  └── webpack.svg
-|  |  |     |  ├── js
-|  |  |     |  |  └── lib
-|  |  |     |  |     └── jquery.min.js
-|  |  |     |  └── WEB-INF
-|  |  |     |     ├── tld
-|  |  |     |     └── web.xml
-|  |  |     └── styles
-|  |  └── webapp // 该目录下的文件不用开发人员手动添加修改，在npm run dev或npm run build的时候自动生成。
-|  └── test
-|     └── java
+├── pom.xml // 메이븐 설정 파일
+├── 소스
+| ├── 메인
+| | ├── 필터
+| | | └── 리소스 // 자바 프로젝트 리소스 구성 디렉터리
+| | ├── java // 자바 코드 디렉토리
+| | ├── js // 프런트 엔드 페이지 엔지니어링
+| | | ├── build // 컴파일 관련 및 웹팩 관련 설정
+| | | | ├── build.js
+| | | | ├── check-versions.js
+| | | | ├── logo.png
+| | | | ├── utils.js
+| | | | ├── webpack.base.conf.js
+| | | | ├── webpack.dev.conf.js
+| | | | └── webpack.prod.conf.js
+| | | ├── config // 구성 관련
+| | | | ├── dev.env.js
+| | | | ├── index.js
+| | | | ├── js-jsp-map.js // 항목 js와 jsp 간의 매핑 구성
+| | | | └── prod.env.js
+| | | ├── package.json // npm 구성
+| | | ├── src // 웹 프로젝트 디렉토리
+| | | | ├── 페이지 // jsp 페이지, 최종 jsp 파일은 페이지의 상대 경로에 따라 webapp/WEB-INF/jsp 디렉토리에 패키징됩니다.
+| | | | | ├── include // jsp:include를 통해 가져온 공유 jsp 페이지
+| | | | | | ├── common_script.jsp
+| | | | | | ├── footer.jsp
+| | | | | | ├── header.jsp
+| | | | | | ├── init.jsp
+| | | | | | └── meta.jsp
+| | | | | ├── 인덱스 // 1페이지
+| | | | | ├── index.js // config/js-jsp-map.js에서 jsp와의 매핑 관계를 구성해야 컴파일된 js가 jsp 본문 아래에 로드됩니다. 일반적으로 js와 jsp는 같은 디렉토리에 있습니다.
+| | | | | | └── index.jsp
+| | | | | └── 시작 // 2페이지
+| | | | | ├── dashboard.css
+| | | | | ├── index.js
+| | | | | └── index.jsp
+| | | | └── my-component.vue는 VUE를 지원합니다.
+| | | ├── 폴리필 호환 관련 코드
+| | | | ├── console.js
+| | | | ├── index.js
+| | | | └── promise.js
+| | | ├── static // 정적 파일이 있으며 결국 이 파일은 webapp 디렉토리에 복사됩니다.
+| | | | ├── favicon.ico
+| | | | ├── 이미지
+| | | | | ├── jsp.svg
+| | | | | └── webpack.svg
+| | | | ├── js
+| | | | | └── lib
+| | | | | └── jquery.min.js
+| | | | └── WEB-INF
+| | | | ├── tld
+| | | | └── web.xml
+| | | └── 스타일
+| | └── webapp // 이 디렉토리의 파일은 개발자가 수동으로 추가 및 수정할 필요가 없으며 npm run dev 또는 npm run build 시 자동으로 생성됩니다.
+| └── 테스트
+| └── 자바
 ```
-src/main/js目录下的目录结构是在vue-cli的webpack模板的基础上修改的，如果您使用过该模板创建过项目，那么将很容易会上手。
+src/main/js 디렉토리 아래의 디렉토리 구조는 vue-cli 웹팩 템플릿을 기반으로 수정되어 있으며, 이 템플릿을 사용하여 프로젝트를 생성했다면 쉽게 시작할 수 있습니다.
 
-### 开发
+### 개발
 `cd src/main/js`
-`npm run dev`
+`npm 실행 개발자`
 
-在idea中启动tomcat
+아이디어로 바람둥이 시작
 
-在浏览器中打开`http://localhost:8081`
+브라우저에서 `http://localhost:8081` 열기
 
-以下几点需要注意一下
+다음 사항에주의가 필요합니다
 
-首次启动项目，建议先`npm run dev`在启动tomcat。之后其中一个重启，另外一个可以不用重启。
-默认情况下`npm run dev`跑在8081端口下，tomcat跑在8080端口下。最终在浏览器访问只需要访问8081的页面，8080页面没有必要。
-开发模式下，js引入的css是动态引入的，页面会出现闪变的效果。不用担心，在发布后的环境中是不会出现的。
-开发jsp页面的时候，热部署会有延时，具体参看JSP页面这一章节
-开发jsp文件务必在pages目录下开发，切勿在webapp目录下开发。否则在切换到pages目录下开发或者打包后或，webapp下的jsp的文件会被覆盖，导致修改的内容丢失。
-随着js-jsp-map.js中配置的的入口文件增加，webpack-dev-server的热更新会很慢，建议根据当前开发需要先临时注释掉一些暂未使用的入口文件，保留1至3个即可，会大大提高热更新时间。
+처음으로 프로젝트를 시작하려면 먼저 `npm run dev`로 tomcat을 시작하는 것이 좋습니다. 그런 다음 그 중 하나가 다시 시작되고 다른 하나는 다시 시작할 필요가 없습니다.
+기본적으로 `npm run dev`는 포트 8081에서 실행되고 tomcat은 포트 8080에서 실행됩니다. 결국 브라우저에서 8081 페이지만 방문하면 되고 8080 페이지는 필요하지 않습니다.
+개발 모드에서 js가 가져온 CSS를 동적으로 가져오고 페이지가 깜박이는 효과가 나타납니다. 걱정하지 마십시오. 출시 후 환경에는 표시되지 않습니다.
+JSP 페이지를 개발할 때 핫 배포가 지연될 수 있습니다. 자세한 내용은 JSP 페이지 장을 참조하십시오.
+jsp 파일의 개발은 webapp 디렉토리가 아닌 pages 디렉토리에서 개발해야 합니다. 그렇지 않으면 개발 또는 패키징을 위해 페이지 디렉토리로 전환한 후 webapp 아래의 jsp 파일을 덮어쓰게 되어 수정된 콘텐츠가 손실됩니다.
+js-jsp-map.js에 설정한 entry 파일이 늘어남에 따라 webpack-dev-server의 hot update 속도가 매우 느려지므로 현재 사용하지 않는 일부 entry 파일은 임시로 주석 처리하는 것을 권장합니다. 개발 필요, 1 ~ 3 유지 핫 업데이트 시간을 크게 향상시킬 것입니다.
 
-### 打包发布
-`npm run build`
+### 패키지 출시
+`npm 실행 빌드`
 
-webapp作为输出目录，static中文件会拷贝到输出目录，pages目录下的jsp文件会作为模板文件拷贝到webapp/WEB-INF/jsp目录下，与jsp关联的js入口会被合并压缩后引入到jsp文件的body中。jsp关联的css会被抽离出一个单个的css文件引入的jsp文件head中。
+webapp은 출력 디렉토리로 사용되며, static의 파일은 출력 디렉토리에 복사되고, 페이지 디렉토리의 jsp 파일은 템플릿 파일로 webapp/WEB-INF/jsp 디렉토리에 복사되며, 관련된 js 항목이 복사됩니다. with jsp는 병합되고 압축된 다음 파일 본문의 jsp로 가져옵니다. jsp와 관련된 css는 단일 css 파일에서 가져온 jsp 파일의 헤드로 추출됩니다.
 
-如果您打包后的应用的Application Context不是/, 比如是`/app`，即访问地址都是基于`http://localhost:8080/app`，那么打包的时候webpack的`publicPath`参数记得配置/app，且jsp页面中所有的地址都需要带上`${pageContext.request.contextPath}/`，在该项目框架中可以简写为`${ctx}/`
+패키징된 애플리케이션의 애플리케이션 컨텍스트가 `/app`과 같이 /가 아닌 경우, 즉 액세스 주소가 `http://localhost:8080/app`을 기반으로 하는 경우 다음의 `publicPath` 매개변수를 구성해야 합니다. /앱을 패키징할 때 webpack 및 jsp 페이지의 모든 주소는 프로젝트 프레임워크에서 `${ctx}/`로 축약될 수 있는 `${pageContext.request.contextPath}/`를 전달해야 합니다.
 
-### JSP页面
-传统的JSP是在`src/main/webapp`下开发，在这个项目框架下开发jsp文件是在`src/main/js/src/pages`下开发。虽然开发目录不一致，但依然拥有传统jsp开发所有的特性。
+### JSP 페이지
+전통적인 JSP는 `src/main/webapp`에서 개발되고, 이 프로젝트의 프레임워크에서 jsp 파일 개발은 `src/main/js/src/pages`에서 개발됩니다. 개발 디렉토리는 일관성이 없지만 여전히 전통적인 jsp 개발의 모든 기능을 가지고 있습니다.
 
-* 模板嵌套，比如使用`<jsp:include page=''></jsp:include>`或者`<%@include file=""%>`
-* el表达式，`<c:set>`, `<c:if>`, `<c:forEach>`等都可以使用
-* 嵌入Java代码 比如使用`<% out.println("hello world"); %>`
-* 支持热部署。配置好启动tomcat相关参数。在修改完jsp保存文件后，约10秒后刷新页面就可以看到页面的变化。如果等不及10秒或者页面一直不刷新，可以先点击idea菜单`File->Syncronize>`同步文件（快捷键`Ctrl+Alt+Y`），然后在点击Run的左侧第三个按钮后选择`Update classes and resources`手动更新，之后就刷新页面就可以看到最新出的页面。
-实际在`npm run dev`的时候，pages目录下的jsp会作为htmlWebpackPlugin插件的模板文件，每次修改pages下的文件都会被输出到`webapp/WEB-INF/jsp`下的相对目录。需要了解具体原理，请前往核心章节
+* 템플릿 중첩(예: `<jsp:include page=''></jsp:include>` 또는 `<%@include file=""%>` 사용)
+* el 표현식, `<c:set>`, `<c:if>`, `<c:forEach>` 등을 사용할 수 있습니다.
+* `<% out.println("hello world"); %>` 사용과 같은 Java 코드 포함
+* 핫 배포를 지원합니다. Tomcat을 시작하기 위해 관련 매개변수를 구성합니다. jsp 세이브 파일을 수정한 후 약 10초 후에 페이지를 새로 고치면 페이지의 변경 사항을 확인할 수 있습니다. 10초 동안 기다릴 수 없거나 페이지가 새로고침되지 않으면 먼저 아이디어 메뉴 `파일->동기화>`를 클릭하여 파일을 동기화(단축키 `Ctrl+Alt+Y`)한 다음 실행 왼쪽의 세 번째 버튼을 선택하고 '클래스 및 리소스 업데이트'를 선택하면 수동으로 업데이트되며 페이지를 새로고침하여 최신 페이지를 볼 수 있습니다.
+실제로 `npm run dev`를 하면 페이지 디렉토리의 jsp가 htmlWebpackPlugin 플러그인의 템플릿 파일로 사용되며 페이지 아래의 파일이 수정될 때마다 아래의 상대 디렉토리로 출력됩니다. `웹앱/WEB-INF/jsp`. 특정 원칙을 이해하려면 핵심 장으로 이동하십시오.
 
-### 自定义标签库
-除了标准的c, fmt, fn标签库外，您也可以自定义标签库。
+### 커스텀 태그 라이브러리
+표준 c, fmt, fn 태그 라이브러리 외에도 태그 라이브러리를 사용자 지정할 수도 있습니다.
 
-* 首先在static/WEB-INF/tld新建一个tld，比如elftld
-* 然后jsp页面引入，`<%@ taglib prefix="elf" uri="/WEB-INF/tld/elfunc.tld" %>`
+* 먼저 elftld와 같은 static/WEB-INF/tld에 새 tld를 만듭니다.
+* 그러면 jsp 페이지가 도입됩니다. `<%@ taglib prefix="elf" uri="/WEB-INF/tld/elfunc.tld" %>`
 
-注意的是，在jsp页面的地址必须以/WEB-INF/开头，而实际开发jsp的路径是在`js/src/pages`目录下，导致idea无法正常解析pages目录下jsp中tld文件路径，在使用自定义标签的时候也无法自动补全。不过可以正常运行，实际开发过程影响不大。如果您有更好的解决方案，请与我们联系。
+jsp 페이지의 주소는 /WEB-INF/로 시작해야 하며 jsp의 실제 개발 경로는 `js/src/pages` 디렉토리에 있으므로 아이디어가 tld를 구문 분석할 수 없다는 점에 유의해야 합니다. 파일 경로는 일반적으로 페이지 디렉토리의 jsp에 있으며 사용자 지정 태그를 사용하는 경우 자동 완성도 사용할 수 없습니다. 그러나 정상적으로 실행될 수 있으며 실제 개발 프로세스에는 거의 영향을 미치지 않습니다. 더 나은 솔루션이 있으면 저희에게 연락하십시오.
 
-### 语法转换
-因为了使用了webpack作为打包工具，您可以轻松对js和css进行语法转换，目前支持：
+### 구문 변환
+webpack은 패키징 도구로 사용되기 때문에 js 및 css 구문을 쉽게 변환할 수 있으며 현재 다음을 지원합니다.
 
-* es6, stage-2
+* es6, 2단계
 * postcss
-* less, sass, scss 需要额外装对应的loader即可支持
+* less, sass, scss를 지원하려면 해당 로더가 추가로 필요합니다.
 
-### 热更新
-在开发单页应用的过程中，有一个很棒的特性就是热更新，修改了js文件，页面实时就会触发更新。
-在此项目框架下，您依然可以享受到热更新带来的喜悦，在您修改js和css的时候，页面都会实时触发更新。
+### 핫 업데이트
+단일 페이지 애플리케이션을 개발하는 과정에서 핫 업데이트라는 훌륭한 기능이 있습니다.js 파일을 수정하면 페이지가 실시간으로 업데이트됩니다.
+이 프로젝트의 프레임워크에서 여전히 최신 업데이트의 즐거움을 누릴 수 있으며 js 및 css를 수정하면 페이지가 실시간으로 업데이트됩니다.
 
-### VUE
-该项目已经默认支持Vue。这一章节也是用VUE编写的，你可以尽情的享受VUE带来的编码的快乐。
+### 뷰
+프로젝트는 이미 기본적으로 Vue를 지원합니다. 이 챕터도 VUE로 작성되었으므로 VUE가 가져다주는 코딩의 즐거움을 만끽할 수 있습니다.
 
-* 您可以给idea添加vue.js插件，这样也可以直接使用.vue文件。
-* js和css的语法转换在.vue文件中同样适用。
+* 아이디어에 vue.js 플러그인을 추가하면 .vue 파일을 직접 사용할 수도 있습니다.
+* js 및 css의 구문 변환은 .vue 파일에도 적용 가능합니다.
 
-### 核心
-该项目融合了webpack和jsp两者的特性实现了多页应用，这很酷。那到底是如何实现的呢。这里我们从搭建项目遇到的问题来讲讲最核心的几个问题是如何解决的。
+### 핵심
+이 프로젝트는 webpack과 jsp의 기능을 결합하여 다중 페이지 애플리케이션을 구현합니다. 어떻게 그런 일이 일어났습니까? 여기서는 프로젝트 구축 과정에서 발생하는 문제 중 핵심 문제를 해결하는 방법에 대해 이야기합니다.
 
-##### HtmlWebpackPlugin
-使用webpack实现多页应用，很容易联想到配置多个entry入口，每一个entry对应一个`HtmlWebpackPlugin`。jsp文件作为`HtmlWebpackPlugin`的模板文件，在entry的js在打包之后会插入到body下。该项目也是按照这样的搭建的。
-这里有几点需要注意
-* HtmlWebpackPlugin解析jsp文件需要对应的loader，需要在webpack中配置`{ test: /\.jsp$/, loader: 'raw-loader' }`，这里使用`raw-loader`进行纯文本拷贝。如果您有更适合jsp的loader，那么您可以赋予jsp文件特多的特性。
-* 因为jsp可以被嵌套，这些被嵌套的jsp，并不是入口的jsp。所有只有是入口的jsp在配合HtmlWebpackPlugin插件的会额外添加{inject: 'body'}参数
-* 那如何规定哪些jsp是入口文件呢？我们是通过配置来约定entry的js与jsp的关联关系，配置文件在`config/js-jsp-map.js`中。
+#####HtmlWebpack플러그인
+웹팩을 사용하여 다중 페이지 애플리케이션을 구현하면 여러 항목 항목을 구성하는 것을 생각하기 쉽습니다. 각 항목은 'HtmlWebpackPlugin'에 해당합니다. jsp 파일은 `HtmlWebpackPlugin`의 템플릿 파일로 사용되며 항목에 있는 js는 패키징 후 본문에 삽입됩니다. 프로젝트도 이런 방식으로 구축됩니다.
+다음은 몇 가지 참고 사항입니다.
+* HtmlWebpackPlugin은 jsp 파일을 파싱하기 위한 해당 로더가 필요하며 `{ test: /\.jsp$/, loader: 'raw-loader' }`는 webpack에서 설정해야 합니다. 텍스트 복사. jsp에 더 적합한 로더가 있다면 jsp 파일에 많은 기능을 줄 수 있습니다.
+* jsp는 중첩될 수 있기 때문에 이러한 중첩된 jsp는 항목 jsp가 아닙니다. 입구만 있는 모든 JSP는 HtmlWebpackPlugin 플러그인과 함께 {inject: 'body'} 매개변수를 추가합니다.
+* 어떤 jsp가 엔트리 파일인지 지정하는 방법은 무엇입니까? 구성을 통해 엔트리 js와 jsp의 관계에 동의하고 구성 파일은 `config/js-jsp-map.js`에 있습니다.
 
-### proxy反代
-tomcat是跑在8080端口下的，webpack-dev-server是跑在8081端口下的，是两个不同应用。那岂不是开发jsp要在tomcat下编写调试，开发js在webpack-dev-server调试。这样的话岂不是很麻烦。
+### 프록시 역방향 생성
+Tomcat은 포트 8080에서 실행되고 webpack-dev-server는 포트 8081에서 실행되며 두 가지 다른 애플리케이션입니다. jsp의 개발은 tomcat에서 작성하고 디버깅해야 하고, js의 개발은 webpack-dev-server에서 디버깅을 해야 한다는 뜻이 아닌가. 많이 번거롭지 않겠습니까.
 
-庆幸的webpack-dev-server有一个proxy参数，我们利用proxy把访问webpack-dev-server的请求都反代到8080下。这样实际开发过程中浏览器只要打开8081端口页面就可以。这样就做到兼顾jsp服务端渲染的功能，以及webpack语法转换，热更新的功能。tomcat只有在必要的时候重启一下就好。
-这里有几点需要注意
-* `npm run dev`和启动tomcat并没有顺序要求，不过在浏览器访问8081前需要把这两个服务都启动起来。
-* 当涉及到jsp文件有新增删除，或者static目录下的文件有新增编辑删除时，需要重新`npm run dev`和重启tomcat。记住一点，如果有文件新增和删除，最好都把这两个服务都重启一下肯定是没有问题的。
+다행히도 webpack-dev-server에는 프록시 매개변수가 있습니다. 프록시를 사용하여 webpack-dev-server에 대한 모든 요청을 8080으로 되돌립니다. 이러한 방식으로 브라우저는 실제 개발 프로세스 중에 8081 포트 페이지만 열면 됩니다. 이러한 방식으로 jsp 서버 측 렌더링 기능과 webpack 구문 변환 및 핫 업데이트 기능이 모두 고려됩니다. 필요한 경우에만 Tomcat을 다시 시작할 수 있습니다.
+다음은 몇 가지 참고 사항입니다.
+* `npm run dev` 및 tomcat 시작에 대한 시퀀스 요구 사항은 없지만 브라우저가 8081에 액세스하기 전에 두 서비스가 모두 시작되어야 합니다.
+* jsp 파일을 추가 또는 삭제하거나 static 디렉토리에 있는 파일을 추가, 수정, 삭제할 경우 `npm run dev`를 재시작하고 tomcat을 재시작해야 합니다. 파일이 추가되거나 삭제된 경우 두 서비스를 모두 다시 시작하는 것이 가장 좋으며 문제가 없음을 기억하십시오.
 
 ### WriteFilePlugin
-我们知道webpack-dev-server是使用内存中的文件系统。而jsp页面最终是要发布到tomcat的，内存中的jsp文件并不能被idea监听，这样即使最终输出的jsp发生改变也无法被deploy到tomcat。
-庆幸我们找到了一个webpack的插件WriteFilePlugin，它能强制把webpack-dev-server程序的输出的文件写到磁盘文件系统上。
-这里有几点需要注意
-* 虽然通过WriteFilePlugin的jsp文件输出到磁盘上了，但是因为不是通过idea直接修改，idea还是无法立刻同步这些文件。idea同步并发布jsp文件会有10s的延迟。如果等不及10秒或者页面一直不刷新，可以先点击idea菜单File->Syncronize>同步文件（快捷键Ctrl+Alt+Y），然后在点击Run的左侧第三个按钮后选择Update classes and resources手动更新，之后就刷新页面就可以看到最新出的页面。
+우리는 webpack-dev-server가 메모리 내 파일 시스템을 사용한다는 것을 알고 있습니다. jsp 페이지가 최종적으로 tomcat에 공개되고, 메모리에 있는 jsp 파일은 아이디어로 모니터링 할 수 없기 때문에 최종 출력 jsp가 변경되더라도 tomcat에 배치할 수 없습니다.
+다행히 우리는 webpack-dev-server 프로그램의 출력 파일을 디스크 파일 시스템에 강제로 쓸 수 있는 webpack 플러그인 WriteFilePlugin을 찾았습니다.
+다음은 몇 가지 참고 사항입니다.
+* WriteFilePlugin을 통한 jsp 파일은 디스크에 출력되지만, idea에서 직접 수정하지 않기 때문에 여전히 이 파일들을 즉시 동기화할 수 없습니다. 아이디어가 jsp 파일을 동기화하고 게시할 때 10초 지연이 있습니다. 10초를 기다리지 못하거나 페이지가 새로고침되지 않으면 먼저 아이디어 메뉴 파일->동기화>파일 동기화(단축키 Ctrl+Alt+Y)를 클릭한 다음 왼쪽 세 번째 버튼을 클릭할 수 있습니다. 의 실행 및 업데이트 클래스 및 리소스를 선택하십시오. 수동 업데이트 후 페이지를 새로 고침하여 최신 페이지를 확인하십시오.
 
-### 结语
-这个思路其实不仅适用tomcat下的jsp多页应用，同样也是适用node作为服务器的多页应用。Enjoy it!
+### 결론
+이 아이디어는 tomcat에서 jsp 다중 페이지 애플리케이션에 적용할 수 있을 뿐만 아니라 노드를 서버로 사용하는 다중 페이지 애플리케이션에도 적용할 수 있습니다. 즐기세요!
